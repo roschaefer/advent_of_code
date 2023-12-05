@@ -56,3 +56,16 @@ pub fn parse(line: &str) -> Option<Game> {
     let rounds: Vec<Round> = rounds.iter().filter_map(|str| to_round(str)).collect();
     Some(Game { id, rounds })
 }
+
+pub fn sum_ids(input: &str) -> u32 {
+    input
+        .split('\n')
+        .filter_map(parse)
+        .filter(|game| {
+            game.rounds
+                .iter()
+                .all(|round| round.red <= 12 && round.green <= 13 && round.blue <= 14)
+        })
+        .map(|game| game.id)
+        .sum()
+}
