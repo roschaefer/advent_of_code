@@ -16,7 +16,7 @@ pub mod part_one {
     }
 
     pub fn sum_of_calibration_values(document: &str) -> u32 {
-        document.split('\n').map(calibration_value).sum()
+        document.lines().map(calibration_value).sum()
     }
 }
 
@@ -80,6 +80,6 @@ pub mod part_two {
     }
 
     pub fn sum_of_calibration_values(document: &str) -> u32 {
-        document.split('\n').map(calibration_value).sum()
+        document.lines().map(calibration_value).sum()
     }
 }

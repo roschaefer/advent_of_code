@@ -77,7 +77,7 @@ pub mod part_one {
     use super::Game;
     pub fn sum_ids(input: &str) -> u32 {
         input
-            .split('\n')
+            .lines()
             .filter_map(Game::parse)
             .filter(|game| {
                 game.sets
@@ -93,7 +93,7 @@ pub mod part_two {
     use super::Game;
     pub fn sum_power(input: &str) -> u32 {
         input
-            .split('\n')
+            .lines()
             .filter_map(Game::parse)
             .map(|game| game.minimum_cubeset())
             .map(|cubeset| cubeset.power())
