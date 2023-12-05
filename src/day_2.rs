@@ -103,7 +103,7 @@ pub mod part_two {
 
 #[cfg(test)]
 mod tests {
-    use crate::day_2::{CubeSet, Game};
+    use super::{CubeSet, Game};
     #[test]
     fn test_parse_game() {
         let line = "Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green";
