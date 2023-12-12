@@ -1,0 +1,7 @@
+id = _{ '0'..'9'+ }
+winning_number = { '0'..'9'+ }
+number = { '0'..'9'+ }
+
+card = { " "* ~ "Card" ~ " "* ~ id ~ ":" ~ (" "+ ~ winning_number)+  ~ " |" ~ (" "+ ~ number)+ ~ " "* }
+cards = _{ card ~ ("\n" ~ card)* }
+
